@@ -4,15 +4,14 @@
 #include <QMainWindow>
 #include <QListView>
 #include <QStringListModel>
-#include <QStringList>
-#include <QVBoxLayout>
+#include <QFile>
+#include <QTextStream>
 #include <QTimer>
-#include <QPlainTextEdit>
-#include <QToolBar>
-#include <QComboBox>
 
 QT_BEGIN_NAMESPACE
-namespace Ui { class MainWindow; }
+namespace Ui {
+class MainWindow;
+}
 QT_END_NAMESPACE
 
 class MainWindow : public QMainWindow
@@ -22,16 +21,20 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-    void showList();
-    void readSensor();
-    void toggle();
+    void logSensorData();
+private slots:
 
-    QListView *listView = nullptr;
-    QPlainTextEdit *sensorLog;
-    QTimer *timer;
-
+    void on_pushButton_clicked();
+    void on_pushButton_2_clicked();
 
 private:
     Ui::MainWindow *ui;
+
+    QListView *listview = nullptr;
+    QFile logFile;
+    QTextStream logStream;
+    QTimer *timer;
+
 };
-#endif // MAINWINDOW_H
+
+#endif

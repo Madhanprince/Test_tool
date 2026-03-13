@@ -1,76 +1,110 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
 
+#include <QVBoxLayout>
+#include <QFile>
+#include <QTextStream>
+#include <QDateTime>
+#include <QDesktopServices>
+#include <QUrl>
+#include <QDebug>
+
 MainWindow::MainWindow(QWidget *parent)
-    : QMainWindow(parent)
-    , ui(new Ui::MainWindow)
+    : QMainWindow(parent), ui(new Ui::MainWindow),logFile("touch.txt"),
+      logStream(&logFile)
 {
     ui->setupUi(this);
 
-    QComboBox *combo = new QComboBox(this);
-    ui->toolBar->addWidget(combo);
+    if (logFile.open(QIODevice::WriteOnly |
+                        QIODevice::Append |
+                        QIODevice::Text))
+       {
+           qDebug() << "Log file opened";
+       }
 
-    connect(ui->pushButton, &QPushButton::clicked,
-            this, &MainWindow::showList);
+    timer = new QTimer(this);
 
+    connect(timer, &QTimer::timeout,
+               this, &MainWindow::logSensorData);
     connect(ui->pushButton_2, &QPushButton::clicked,
-            this, &MainWindow::toggle);
-
-    QVBoxLayout *layout = new QVBoxLayout;
-
-//    layout->addWidget(ui->pushButton);
-//    layout->addWidget(listView);
-//    layout->addWidget(ui->graphicsView);
-
-    centralWidget()->setLayout(layout);
-
+            this, &MainWindow::on_pushButton_2_clicked);
 }
 
 MainWindow::~MainWindow()
 {
+    if (logFile.isOpen())
+        logFile.close();
+
     delete ui;
 }
-void MainWindow::toggle(){
-    if (!sensorLog) {
-        sensorLog = new QPlainTextEdit(this);
-        sensorLog->setGeometry(200,200,300,200);
-        sensorLog->setReadOnly(true);
-    }
 
-    if (!timer) {
-        timer = new QTimer(this);
-        connect(timer, &QTimer::timeout, this, &MainWindow::readSensor);
-    }
 
-    if (!timer->isActive()) {
-        timer->start(1000);
-    } else {
-        timer->stop();
-    }
-}
-
-void MainWindow::readSensor(){
-     sensorLog->appendPlainText("Temperature: 26C");
-}
-
-void MainWindow::showList()
+void MainWindow::on_pushButton_clicked()
 {
-    if(!listView)
-      {
-          listView = new QListView(this);
+    if (!listview) {
 
-          QStringList items;
-          items << "Camera" << "Sensor" << "Robot";
+        listview = new QListView(this);
+        listview->setFixedSize(200,200);
 
-          QStringListModel *model = new QStringListModel(items);
-          listView->setModel(model);
-          listView->setGeometry(100,100,200,150);
-          listView->show();
-      }
-      else
-      {
-          listView->setVisible(!listView->isVisible());
-      }
+        QStringList myFiles;
+        myFiles << "robot_model.urdf"
+                << "sensor_config.yaml"
+                << "world_map.xml";
+
+        QStringListModel *model = new QStringListModel(this);
+        model->setStringList(myFiles);
+
+        listview->setModel(model);
+        listview->setGeometry(100,100,200,150);
+
+        listview->show();
+    }
+    else {
+
+        listview->setVisible(!listview->isVisible());
+    }
 }
 
 
+void MainWindow::on_pushButton_2_clicked()
+{
+    timer->start(1000);   // start timer every 1 second
+}
+
+
+//void MainWindow::logSensorData()
+//{
+//    QString fileName = "touch.txt";
+
+//    QFile file(fileName);
+
+//    if (file.open(QIODevice::WriteOnly |
+//                  QIODevice::Append |
+//                  QIODevice::Text))
+//    {
+//        QTextStream stream(&file);
+
+//        QString timestamp =
+//            QDateTime::currentDateTime()
+//            .toString("yyyy-MM-dd hh:mm:ss");
+
+//        stream << "[" << timestamp
+//               << "] Sensor Status: OK. Simulation Running.\n";
+
+//        file.close();
+//    }
+
+//    QDesktopServices::openUrl(QUrl::fromLocalFile(fileName));
+//}
+
+void MainWindow::logSensorData()
+{
+    QString timestamp =
+        QDateTime::currentDateTime()
+        .toString("yyyy-MM-dd hh:mm:ss");
+
+    logStream << "[" << timestamp
+              << "] Sensor Status: OK\n";
+
+    logStream.flush();   // forces write immediately
+}

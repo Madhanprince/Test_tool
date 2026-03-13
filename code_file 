@@ -1,0 +1,152 @@
+
+
+// #ifndef MAINWINDOW_H
+// #define MAINWINDOW_H
+
+// #include <QMainWindow>
+// #include <QToolBar>
+// #include <QAction>
+// #include <QActionGroup>
+
+// class MainWindow : public QMainWindow
+// {
+//     Q_OBJECT
+
+// public:
+//     MainWindow(QWidget *parent = nullptr);
+
+// private:
+//     QToolBar *toolBar;
+//     QAction *selectTool;
+//     QAction *moveTool;
+//     QAction *rotateTool;
+// };
+
+// #endif
+
+// #include "mainwindow.h"
+
+// MainWindow::MainWindow(QWidget *parent)
+//     : QMainWindow(parent)
+// {
+//     resize(600,400);
+
+//     // Create toolbar
+//     toolBar = addToolBar("Tools");
+
+//     // Create actions
+//     selectTool = new QAction("Select", this);
+//     moveTool = new QAction("Move", this);
+//     rotateTool = new QAction("Rotate", this);
+
+//     // Make them toggleable
+//     selectTool->setCheckable(true);
+//     moveTool->setCheckable(true);
+//     rotateTool->setCheckable(true);
+
+//     // Only one tool active at a time
+//     QActionGroup *toolGroup = new QActionGroup(this);
+//     toolGroup->setExclusive(true);
+
+//     toolGroup->addAction(selectTool);
+//     toolGroup->addAction(moveTool);
+//     toolGroup->addAction(rotateTool);
+
+//     // Add to toolbar
+//     toolBar->addAction(selectTool);
+//     toolBar->addAction(moveTool);
+//     toolBar->addAction(rotateTool);
+
+//     // Default tool
+//     selectTool->setChecked(true);
+// }
+
+cmake_minimum_required(VERSION 3.16)
+
+project(QtToolbarToggle)
+
+set(CMAKE_CXX_STANDARD 17)
+
+set(CMAKE_AUTOMOC ON)
+
+find_package(Qt5 REQUIRED COMPONENTS Widgets)
+
+add_executable(QtToolbarToggle
+   src/main.cpp
+   src/mainwindow.cpp
+   src/mainwindow.h
+)
+
+target_link_libraries(QtToolbarToggle Qt5::Widgets)
+
+// -----------------------------------------------------------------------------------------------------------------------------------
+
+// 2. 
+// #include "mainwindow.h"
+// #include "./ui_mainwindow.h"
+
+// MainWindow::MainWindow(QWidget *parent)
+//     : QMainWindow(parent)
+//     , ui(new Ui::MainWindow)
+// {
+//     ui->setupUi(this);
+
+//     ui->toolBar->addWiget(new QLabel("camera:"));
+//     m_statusLight->
+
+//     connect(ui->pushButton, &QPushButton::clicked,
+//             this, &MainWindow::showList);
+
+//     connect(ui->pushButton_2, &QPushButton::clicked,
+//             this, &MainWindow::toggle);
+
+// }
+
+// MainWindow::~MainWindow()
+// {
+//     delete ui;
+// }
+// void MainWindow::toggle(){
+//     if (!sensorLog) {
+//         sensorLog = new QPlainTextEdit(this);
+//         sensorLog->setGeometry(200,200,300,200);
+//         sensorLog->setReadOnly(true);
+//     }
+
+//     if (!timer) {
+//         timer = new QTimer(this);
+//         connect(timer, &QTimer::timeout, this, &MainWindow::readSensor);
+//     }
+
+//     if (!timer->isActive()) {
+//         timer->start(1000);
+//     } else {
+//         timer->stop();
+//     }
+// }
+
+// void MainWindow::readSensor(){
+//      sensorLog->appendPlainText("Temperature: 26C");
+// }
+
+// void MainWindow::showList()
+// {
+//     if(!listView)
+//       {
+//           listView = new QListView(this);
+
+//           QStringList items;
+//           items << "Camera" << "Sensor" << "Robot";
+
+//           QStringListModel *model = new QStringListModel(items);
+//           listView->setModel(model);
+//           listView->setGeometry(100,100,200,150);
+//           listView->show();
+//       }
+//       else
+//       {
+//           listView->setVisible(!listView->isVisible());
+//       }
+// }
+
+

@@ -6,29 +6,285 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>600</height>
+    <width>1285</width>
+    <height>760</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QGraphicsView" name="graphicsView">
+   <property name="layoutDirection">
+    <enum>Qt::LeftToRight</enum>
+   </property>
+   <widget class="QGroupBox" name="groupBox">
     <property name="geometry">
      <rect>
-      <x>360</x>
+      <x>10</x>
       <y>10</y>
-      <width>381</width>
-      <height>511</height>
+      <width>1261</width>
+      <height>61</height>
      </rect>
     </property>
+    <property name="title">
+     <string>Sensors_Status</string>
+    </property>
+    <widget class="QLabel" name="label_2">
+     <property name="geometry">
+      <rect>
+       <x>250</x>
+       <y>30</y>
+       <width>81</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>LiDARStatus :</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>30</y>
+       <width>91</width>
+       <height>16</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>CameraStatus:</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_3">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>30</y>
+       <width>20</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+	color: rgb(1, 0, 0);
+    /* Set border-radius to exactly half of the width/height */
+    border-radius:7px; 
+    border: 2px solid #8f8f91;
+    background-color: #f6f6f6;
+    min-width: 10px;
+    min-height: 10px;
+    background-color: red; /* Change to 'green', 'blue', or '#ff5500' */
+    color: white;  
+}
+
+QPushButton:pressed {
+    background-color:  #F44336
+}</string>
+     </property>
+     <property name="text">
+      <string>F</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_7">
+     <property name="geometry">
+      <rect>
+       <x>340</x>
+       <y>30</y>
+       <width>20</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+	color: rgb(1, 0, 0);
+    /* Set border-radius to exactly half of the width/height */
+    border-radius:7px; 
+    border: 2px solid #8f8f91;
+    background-color: #f6f6f6;
+    min-width: 10px;
+    min-height: 10px;
+    background-color: green; /* Change to 'green', 'blue', or '#ff5500' */
+    color: white;  
+	
+}
+
+QPushButton:pressed {
+    background-color: #d1d1d1;
+}</string>
+     </property>
+     <property name="text">
+      <string/>
+     </property>
+    </widget>
+    <widget class="QLabel" name="label_3">
+     <property name="geometry">
+      <rect>
+       <x>380</x>
+       <y>30</y>
+       <width>71</width>
+       <height>21</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>UltraSonic :</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_4">
+     <property name="geometry">
+      <rect>
+       <x>140</x>
+       <y>30</y>
+       <width>20</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+	color: rgb(1, 0, 0);
+    /* Set border-radius to exactly half of the width/height */
+    border-radius:7px; 
+    border: 2px solid #8f8f91;
+    background-color: #f6f6f6;
+    min-width: 10px;
+    min-height: 10px;
+    background-color: green; /* Change to 'green', 'blue', or '#ff5500' */
+    color: white;  
+}
+
+QPushButton:pressed {
+    background-color: #d1d1d1;
+}</string>
+     </property>
+     <property name="text">
+      <string>L</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_5">
+     <property name="geometry">
+      <rect>
+       <x>170</x>
+       <y>30</y>
+       <width>20</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+	color: rgb(1, 0, 0);
+    /* Set border-radius to exactly half of the width/height */
+    border-radius:7px; 
+    border: 2px solid #8f8f91;
+    background-color: #f6f6f6;
+    min-width: 10px;
+    min-height: 10px;
+    background-color: red; /* Change to 'green', 'blue', or '#ff5500' */
+    color: white;  
+}
+
+QPushButton:pressed {
+    background-color: #d1d1d1;
+}</string>
+     </property>
+     <property name="text">
+      <string>R</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_6">
+     <property name="geometry">
+      <rect>
+       <x>200</x>
+       <y>30</y>
+       <width>20</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+	color: rgb(1, 0, 0);
+    /* Set border-radius to exactly half of the width/height */
+    border-radius:7px; 
+    border: 2px solid #8f8f91;
+    background-color: #f6f6f6;
+    min-width: 10px;
+    min-height: 10px;
+	background-color: green; /* Change to 'green', 'blue', or '#ff5500' */
+    color: white;  
+}
+
+QPushButton:pressed {
+    background-color: #d1d1d1;
+}</string>
+     </property>
+     <property name="text">
+      <string>C</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_8">
+     <property name="geometry">
+      <rect>
+       <x>460</x>
+       <y>30</y>
+       <width>20</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+	color: rgb(1, 0, 0);
+    /* Set border-radius to exactly half of the width/height */
+    border-radius:7px; 
+    border: 2px solid #8f8f91;
+    background-color: #f6f6f6;
+    min-width: 10px;
+    min-height: 10px;
+    background-color: green; /* Change to 'green', 'blue', or '#ff5500' */
+    color: white;  
+}
+
+QPushButton:pressed {
+    background-color: #d1d1d1;
+}</string>
+     </property>
+     <property name="text">
+      <string>L</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_9">
+     <property name="geometry">
+      <rect>
+       <x>490</x>
+       <y>30</y>
+       <width>20</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">QPushButton {
+	color: rgb(1, 0, 0);
+    /* Set border-radius to exactly half of the width/height */
+    border-radius:7px; 
+    border: 2px solid #8f8f91;
+    background-color: #f6f6f6;
+    min-width: 10px;
+    min-height: 10px;
+    background-color: red; /* Change to 'green', 'blue', or '#ff5500' */
+    color: white;  
+}
+
+QPushButton:pressed {
+    background-color: #d1d1d1;
+}</string>
+     </property>
+     <property name="text">
+      <string>R</string>
+     </property>
+    </widget>
    </widget>
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>170</y>
+      <x>150</x>
+      <y>410</y>
       <width>231</width>
       <height>31</height>
      </rect>
@@ -40,48 +296,35 @@
    <widget class="QPushButton" name="pushButton_2">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>240</y>
+      <x>150</x>
+      <y>330</y>
       <width>231</width>
       <height>31</height>
      </rect>
     </property>
     <property name="text">
-     <string>PushButton</string>
+     <string>Logs</string>
+    </property>
+   </widget>
+   <widget class="QFrame" name="viz_container">
+    <property name="geometry">
+     <rect>
+      <x>670</x>
+      <y>90</y>
+      <width>601</width>
+      <height>611</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::StyledPanel</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Raised</enum>
     </property>
    </widget>
   </widget>
-  <widget class="QMenuBar" name="menubar">
-   <property name="geometry">
-    <rect>
-     <x>0</x>
-     <y>0</y>
-     <width>800</width>
-     <height>20</height>
-    </rect>
-   </property>
-  </widget>
   <widget class="QStatusBar" name="statusbar"/>
-  <widget class="QToolBar" name="toolBar">
-   <property name="windowTitle">
-    <string>toolBar</string>
-   </property>
-   <attribute name="toolBarArea">
-    <enum>TopToolBarArea</enum>
-   </attribute>
-   <attribute name="toolBarBreak">
-    <bool>false</bool>
-   </attribute>
-   <addaction name="actionCameras"/>
-   <addaction name="actionUltrasonic"/>
-   <addaction name="actionLiDAR"/>
-  </widget>
-  <action name="actionCameras">
-   <property name="text">
-    <string>Cameras</string>
-   </property>
-  </action>
-  <action name="actionLiDAR">
+  <action name="action">
    <property name="text">
     <string>LiDAR</string>
    </property>
@@ -89,6 +332,11 @@
   <action name="actionUltrasonic">
    <property name="text">
     <string>Ultrasonic</string>
+   </property>
+  </action>
+  <action name="actionCameras">
+   <property name="text">
+    <string>Cameras</string>
    </property>
   </action>
  </widget>
