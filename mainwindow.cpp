@@ -108,3 +108,9 @@ void MainWindow::logSensorData()
 
     logStream.flush();   // forces write immediately
 }
+
+void MainWindow::on_centralwidget_customContextMenuRequested(const QPoint &pos)
+{
+
+}
+

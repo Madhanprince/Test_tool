@@ -6,9 +6,12 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1285</width>
-    <height>760</height>
+    <width>988</width>
+    <height>745</height>
    </rect>
+  </property>
+  <property name="mouseTracking">
+   <bool>true</bool>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
@@ -20,310 +23,353 @@
    <widget class="QGroupBox" name="groupBox">
     <property name="geometry">
      <rect>
-      <x>10</x>
-      <y>10</y>
-      <width>1261</width>
-      <height>61</height>
+      <x>9</x>
+      <y>9</y>
+      <width>970</width>
+      <height>71</height>
      </rect>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>16777215</width>
+      <height>71</height>
+     </size>
     </property>
     <property name="title">
-     <string>Sensors_Status</string>
+     <string>GroupBox</string>
     </property>
-    <widget class="QLabel" name="label_2">
+    <property name="alignment">
+     <set>Qt::AlignBottom|Qt::AlignLeading|Qt::AlignLeft</set>
+    </property>
+    <widget class="QWidget" name="">
      <property name="geometry">
       <rect>
-       <x>250</x>
+       <x>12</x>
        <y>30</y>
-       <width>81</width>
-       <height>21</height>
+       <width>591</width>
+       <height>31</height>
       </rect>
      </property>
-     <property name="text">
-      <string>LiDARStatus :</string>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label">
-     <property name="geometry">
-      <rect>
-       <x>10</x>
-       <y>30</y>
-       <width>91</width>
-       <height>16</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>CameraStatus:</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="pushButton_3">
-     <property name="geometry">
-      <rect>
-       <x>110</x>
-       <y>30</y>
-       <width>20</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QPushButton {
-	color: rgb(1, 0, 0);
-    /* Set border-radius to exactly half of the width/height */
-    border-radius:7px; 
-    border: 2px solid #8f8f91;
-    background-color: #f6f6f6;
-    min-width: 10px;
-    min-height: 10px;
-    background-color: red; /* Change to 'green', 'blue', or '#ff5500' */
-    color: white;  
-}
-
-QPushButton:pressed {
-    background-color:  #F44336
+     <layout class="QHBoxLayout" name="horizontalLayout">
+      <item>
+       <widget class="QLabel" name="label">
+        <property name="maximumSize">
+         <size>
+          <width>90</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="layoutDirection">
+         <enum>Qt::LeftToRight</enum>
+        </property>
+        <property name="lineWidth">
+         <number>2</number>
+        </property>
+        <property name="text">
+         <string>CameraStatus :</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_5">
+        <property name="maximumSize">
+         <size>
+          <width>30</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    border-radius: 11px;
+    background-color: green;
+    color: white;
 }</string>
-     </property>
-     <property name="text">
-      <string>F</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="pushButton_7">
-     <property name="geometry">
-      <rect>
-       <x>340</x>
-       <y>30</y>
-       <width>20</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QPushButton {
-	color: rgb(1, 0, 0);
-    /* Set border-radius to exactly half of the width/height */
-    border-radius:7px; 
-    border: 2px solid #8f8f91;
-    background-color: #f6f6f6;
-    min-width: 10px;
-    min-height: 10px;
-    background-color: green; /* Change to 'green', 'blue', or '#ff5500' */
-    color: white;  
-	
-}
-
-QPushButton:pressed {
-    background-color: #d1d1d1;
+        </property>
+        <property name="text">
+         <string>R</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_6">
+        <property name="maximumSize">
+         <size>
+          <width>30</width>
+          <height>59</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    border-radius: 11px;
+    background-color: green;
+    color: white;
 }</string>
-     </property>
-     <property name="text">
-      <string/>
-     </property>
-    </widget>
-    <widget class="QLabel" name="label_3">
-     <property name="geometry">
-      <rect>
-       <x>380</x>
-       <y>30</y>
-       <width>71</width>
-       <height>21</height>
-      </rect>
-     </property>
-     <property name="text">
-      <string>UltraSonic :</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="pushButton_4">
-     <property name="geometry">
-      <rect>
-       <x>140</x>
-       <y>30</y>
-       <width>20</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QPushButton {
-	color: rgb(1, 0, 0);
-    /* Set border-radius to exactly half of the width/height */
-    border-radius:7px; 
-    border: 2px solid #8f8f91;
-    background-color: #f6f6f6;
-    min-width: 10px;
-    min-height: 10px;
-    background-color: green; /* Change to 'green', 'blue', or '#ff5500' */
-    color: white;  
-}
-
-QPushButton:pressed {
-    background-color: #d1d1d1;
+        </property>
+        <property name="text">
+         <string>L</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_3">
+        <property name="maximumSize">
+         <size>
+          <width>30</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    border-radius: 11px;
+    background-color: green;
+    color: white;
 }</string>
-     </property>
-     <property name="text">
-      <string>L</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="pushButton_5">
-     <property name="geometry">
-      <rect>
-       <x>170</x>
-       <y>30</y>
-       <width>20</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QPushButton {
-	color: rgb(1, 0, 0);
-    /* Set border-radius to exactly half of the width/height */
-    border-radius:7px; 
-    border: 2px solid #8f8f91;
-    background-color: #f6f6f6;
-    min-width: 10px;
-    min-height: 10px;
-    background-color: red; /* Change to 'green', 'blue', or '#ff5500' */
-    color: white;  
-}
-
-QPushButton:pressed {
-    background-color: #d1d1d1;
+        </property>
+        <property name="text">
+         <string>F</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_4">
+        <property name="maximumSize">
+         <size>
+          <width>30</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    border-radius: 11px;
+    background-color: green;
+    color: white;
 }</string>
-     </property>
-     <property name="text">
-      <string>R</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="pushButton_6">
-     <property name="geometry">
-      <rect>
-       <x>200</x>
-       <y>30</y>
-       <width>20</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QPushButton {
-	color: rgb(1, 0, 0);
-    /* Set border-radius to exactly half of the width/height */
-    border-radius:7px; 
-    border: 2px solid #8f8f91;
-    background-color: #f6f6f6;
-    min-width: 10px;
-    min-height: 10px;
-	background-color: green; /* Change to 'green', 'blue', or '#ff5500' */
-    color: white;  
-}
-
-QPushButton:pressed {
-    background-color: #d1d1d1;
+        </property>
+        <property name="text">
+         <string>C</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="Line" name="line">
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>16777212</height>
+         </size>
+        </property>
+        <property name="midLineWidth">
+         <number>1</number>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_2">
+        <property name="maximumSize">
+         <size>
+          <width>50</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="layoutDirection">
+         <enum>Qt::LeftToRight</enum>
+        </property>
+        <property name="text">
+         <string>LiDAR :</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_7">
+        <property name="maximumSize">
+         <size>
+          <width>30</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    border-radius: 11px;
+    background-color: green;
+    color: white;
 }</string>
-     </property>
-     <property name="text">
-      <string>C</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="pushButton_8">
-     <property name="geometry">
-      <rect>
-       <x>460</x>
-       <y>30</y>
-       <width>20</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QPushButton {
-	color: rgb(1, 0, 0);
-    /* Set border-radius to exactly half of the width/height */
-    border-radius:7px; 
-    border: 2px solid #8f8f91;
-    background-color: #f6f6f6;
-    min-width: 10px;
-    min-height: 10px;
-    background-color: green; /* Change to 'green', 'blue', or '#ff5500' */
-    color: white;  
-}
-
-QPushButton:pressed {
-    background-color: #d1d1d1;
+        </property>
+        <property name="text">
+         <string>C</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="Line" name="line_2">
+        <property name="maximumSize">
+         <size>
+          <width>16777215</width>
+          <height>80</height>
+         </size>
+        </property>
+        <property name="midLineWidth">
+         <number>1</number>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_3">
+        <property name="maximumSize">
+         <size>
+          <width>70</width>
+          <height>16777215</height>
+         </size>
+        </property>
+        <property name="layoutDirection">
+         <enum>Qt::LeftToRight</enum>
+        </property>
+        <property name="text">
+         <string>Ultrasonic :</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_10">
+        <property name="maximumSize">
+         <size>
+          <width>30</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    border-radius: 11px;
+    background-color: green;
+    color: white;
 }</string>
-     </property>
-     <property name="text">
-      <string>L</string>
-     </property>
-    </widget>
-    <widget class="QPushButton" name="pushButton_9">
-     <property name="geometry">
-      <rect>
-       <x>490</x>
-       <y>30</y>
-       <width>20</width>
-       <height>20</height>
-      </rect>
-     </property>
-     <property name="styleSheet">
-      <string notr="true">QPushButton {
-	color: rgb(1, 0, 0);
-    /* Set border-radius to exactly half of the width/height */
-    border-radius:7px; 
-    border: 2px solid #8f8f91;
-    background-color: #f6f6f6;
-    min-width: 10px;
-    min-height: 10px;
-    background-color: red; /* Change to 'green', 'blue', or '#ff5500' */
-    color: white;  
-}
-
-QPushButton:pressed {
-    background-color: #d1d1d1;
+        </property>
+        <property name="text">
+         <string>R</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_9">
+        <property name="maximumSize">
+         <size>
+          <width>30</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    border-radius: 11px;
+    background-color: green;
+    color: white;
 }</string>
-     </property>
-     <property name="text">
-      <string>R</string>
-     </property>
+        </property>
+        <property name="text">
+         <string>L</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="pushButton_8">
+        <property name="maximumSize">
+         <size>
+          <width>30</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+    border-radius: 11px;
+    background-color: green;
+    color: white;
+}</string>
+        </property>
+        <property name="text">
+         <string>F</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
     </widget>
    </widget>
-   <widget class="QPushButton" name="pushButton">
+   <widget class="QWidget" name="">
     <property name="geometry">
      <rect>
-      <x>150</x>
-      <y>410</y>
-      <width>231</width>
-      <height>31</height>
+      <x>9</x>
+      <y>86</y>
+      <width>100</width>
+      <height>56</height>
      </rect>
     </property>
-    <property name="text">
-     <string>Launch_files </string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_2">
-    <property name="geometry">
-     <rect>
-      <x>150</x>
-      <y>330</y>
-      <width>231</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Logs</string>
-    </property>
-   </widget>
-   <widget class="QFrame" name="viz_container">
-    <property name="geometry">
-     <rect>
-      <x>670</x>
-      <y>90</y>
-      <width>601</width>
-      <height>611</height>
-     </rect>
-    </property>
-    <property name="frameShape">
-     <enum>QFrame::StyledPanel</enum>
-    </property>
-    <property name="frameShadow">
-     <enum>QFrame::Raised</enum>
-    </property>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <widget class="QFrame" name="viz_container">
+       <property name="maximumSize">
+        <size>
+         <width>900</width>
+         <height>16777215</height>
+        </size>
+       </property>
+       <property name="layoutDirection">
+        <enum>Qt::LeftToRight</enum>
+       </property>
+       <property name="frameShape">
+        <enum>QFrame::Box</enum>
+       </property>
+       <property name="frameShadow">
+        <enum>QFrame::Raised</enum>
+       </property>
+       <property name="midLineWidth">
+        <number>1</number>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QPushButton" name="pushButton_2">
+         <property name="text">
+          <string>PushButton</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pushButton">
+         <property name="text">
+          <string>PushButton</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
    </widget>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>988</width>
+     <height>20</height>
+    </rect>
+   </property>
+  </widget>
   <action name="action">
    <property name="text">
     <string>LiDAR</string>
